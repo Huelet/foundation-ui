@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 /// <reference types="@emotion/react/types/css-prop" />
 import React from "react";
-import { css } from "@emotion/css";
+import { css, jsx } from "@emotion/react";
 
 export interface LinkProps {
     to: string;
@@ -14,13 +15,13 @@ export const Link = ({ to, children, className }: LinkProps) => {
 			href={to}
 			className={className}
 			css={css`
-				color: rgb(0, 125, 179),
-				text-decoration: none,
+				color: rgb(0, 125, 179);
+				text-decoration: none;
 
 				&:visited {
-					color: rgb(0, 125, 179),
-					text-decoration: none,
-				},
+					color: rgb(0, 125, 179);
+					text-decoration: none;
+				}
 			`}
 		>
 			{children}
