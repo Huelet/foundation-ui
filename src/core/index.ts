@@ -1,3 +1,4 @@
 import { Link } from "./Link";
+import { Pill } from "./Pill";
 
-export { Link };
+export { Link, Pill };

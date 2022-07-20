@@ -1,3 +1,3 @@
-import { Link } from "./core";
+import { Link, Pill } from "./core";
 
-export { Link };
+export { Link, Pill };
