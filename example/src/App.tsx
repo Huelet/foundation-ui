@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { ExampleComponent } from '@huelet/foundation-ui'
+import { Link } from '@huelet/foundation-ui'
 import '@huelet/foundation-ui/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <Link to="/">Home</Link>
 }
 
 export default App
