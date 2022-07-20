@@ -13,15 +13,15 @@ export const Link = ({ to, children, className }: LinkProps) => {
 		<a
 			href={to}
 			className={className}
-			css={css({
-				color: "rgb(0, 125, 179)",
-				textDecoration: "none",
+			css={css`
+				color: rgb(0, 125, 179),
+				text-decoration: none,
 
-				"&:visited": {
-					color: "rgb(0, 125, 179)",
-					textDecoration: "none",
+				&:visited {
+					color: rgb(0, 125, 179),
+					text-decoration: none,
 				},
-			})}
+			`}
 		>
 			{children}
 		</a>
