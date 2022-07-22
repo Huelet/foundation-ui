@@ -1,10 +1,14 @@
 import React from "react";
 
-import { Button } from "@huelet/foundation-ui";
+import { Card } from "@huelet/foundation-ui";
 import "@huelet/foundation-ui/dist/index.css";
 
 const App = () => {
-    return <Button text="Hello World" />;
+    return (
+        <Card full={true}>
+            <h1>Hello World</h1>
+        </Card>
+    );
 };
 
 export default App;

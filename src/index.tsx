@@ -1,3 +1,3 @@
-import { Link, Pill, Button } from "./core";
+import { Link, Pill, Button, Card } from "./core";
 
-export { Link, Pill, Button };
+export { Link, Pill, Button, Card };
