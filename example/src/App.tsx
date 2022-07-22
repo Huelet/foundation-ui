@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 
-import { Link } from '@huelet/foundation-ui'
-import '@huelet/foundation-ui/dist/index.css'
+import { Button } from "@huelet/foundation-ui";
+import "@huelet/foundation-ui/dist/index.css";
 
 const App = () => {
-  return <Link to="/">Home</Link>
-}
+    return <Button text="Hello World" />;
+};
 
-export default App
+export default App;
