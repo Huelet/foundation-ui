@@ -27,70 +27,88 @@ export const Card = ({
         <div
             css={css`
                 ${full
-                    ? `
-                        display: grid;
-                        place-items: center;
-                        background-color: #181718;
-                        color: #FFFFFF;
-                        width: 100vw;
-                        height: 100vh;
-                    `
+                    ? {
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          backgroundColor: "#181718",
+                          color: "#FFFFFF",
+                          width: "100vw",
+                          height: "100vh",
+
+                          "@media only screen and (max-width: 600px)": {
+                              display: "flex",
+                              flexDirection: "column",
+                              width: "100vw",
+                              height: "100vh",
+                          },
+                      }
                     : ""}
                 ${cursor ? "cursor: pointer;" : ""}
             `}
         >
             <div
+                className={className}
                 css={css({
                     display: "flex",
                     flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: full ? "auto" : "7em",
+                    height: full ? "auto" : "7em",
+                    padding: padding ? padding : "7em",
+                    background: "rgba(255, 255, 255, 0.20)",
+                    border: "0.1em solid rgba(0, 0, 0, 0.15)",
+                    borderRadius: "10px",
+
+                    "@media only screen and (max-width: 600px)": {
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "5px",
+                        padding: "3em",
+                    },
                 })}
             >
-                <div
-                    className={className}
-                    css={css({
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        padding: padding ? padding : "7em",
-                        background: "rgba(255, 255, 255, 0.20)",
-                        border: "0.1em solid rgba(0, 0, 0, 0.15)",
-                        borderRadius: "10px",
-                        transition: "0.6s",
-                    })}
-                >
-                    {title ? (
-                        <div>
-                            <h2
+                {title ? (
+                    <div>
+                        <h2
+                            css={css({
+                                fontSize: "3em",
+                            })}
+                        >
+                            {title}
+                        </h2>
+                        {subtitle ? (
+                            <h3
                                 css={css({
-                                    fontSize: "3em",
+                                    fontSize: "1.5em",
                                 })}
                             >
-                                {title}
-                            </h2>
-                            {subtitle ? (
-                                <h3
-                                    css={css({
-                                        fontSize: "1.5em",
-                                    })}
-                                >
-                                    {subtitle}
-                                </h3>
-                            ) : null}
-                            <div
-                                css={css({
-                                    width: "100%",
+                                {subtitle}
+                            </h3>
+                        ) : null}
+                        <div
+                            css={css({
+                                width: "100%",
+                                height: "0px",
+                                left: "calc(50% - 689px/2 - 334px)",
+                                top: "calc(50% - 0px/2 - 337px)",
+                                border: "2px solid #605e5c",
+                                marginTop: "2em",
+
+                                "@media only screen and (max-width: 600px)": {
+                                    width: "50%",
                                     height: "0px",
-                                    left: "calc(50% - 689px/2 - 334px)",
+                                    left: "calc(50% - 680px/2 - 334px)",
                                     top: "calc(50% - 0px/2 - 337px)",
-                                    border: "2px solid #605e5c",
+                                    border: "2px solid var(--dividerColor)",
                                     marginTop: "2em",
-                                })}
-                            ></div>
-                        </div>
-                    ) : null}
-                    {children}
-                </div>
+                                },
+                            })}
+                        ></div>
+                    </div>
+                ) : null}
+                {children}
             </div>
         </div>
     );
