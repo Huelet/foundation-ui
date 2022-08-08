@@ -2,10 +2,11 @@
 /// <reference types="@emotion/react/types/css-prop" />
 /** @jsx jsx */
 import React from "react";
-import { css, jsx } from "@emotion/react";
+import { css, Interpolation, jsx } from "@emotion/react";
 
 export interface PillProps {
     children: React.ReactNode;
+    css?: Interpolation<any>;
     type: "primary" | "secondary" | "transparent";
 }
 

@@ -2,7 +2,7 @@
 /// <reference types="@emotion/react/types/css-prop" />
 /** @jsx jsx */
 import React from "react";
-import { css, jsx } from "@emotion/react";
+import { css, Interpolation, jsx } from "@emotion/react";
 
 export interface CardProps {
     children: React.ReactNode;
@@ -12,6 +12,7 @@ export interface CardProps {
     full?: boolean;
     cursor?: boolean;
     padding?: number;
+    css?: Interpolation<any>;
 }
 
 export const Card = ({
