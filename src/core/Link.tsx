@@ -3,12 +3,12 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/react";
-import type { Interpolation } from "@emotion/react";
+import type { SerializedStyles } from "@emotion/react";
 
 export interface LinkProps {
     to: string;
     children: React.ReactNode;
-    css?: Interpolation<any>;
+    css?: SerializedStyles;
     className?: string;
     animation?: boolean;
 }

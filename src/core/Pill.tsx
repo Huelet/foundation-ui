@@ -3,11 +3,11 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/react";
-import type { Interpolation } from "@emotion/react";
+import type { SerializedStyles } from "@emotion/react";
 
 export interface PillProps {
     children: React.ReactNode;
-    css?: Interpolation<any>;
+    css?: SerializedStyles;
     type: "primary" | "secondary" | "transparent";
 }
 

@@ -3,7 +3,7 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/react";
-import type { Interpolation } from "@emotion/react";
+import type { SerializedStyles } from "@emotion/react";
 
 export interface CardProps {
     children: React.ReactNode;
@@ -13,7 +13,7 @@ export interface CardProps {
     full?: boolean;
     cursor?: boolean;
     padding?: number;
-    css?: Interpolation<any>;
+    css?: SerializedStyles;
 }
 
 export const Card = ({

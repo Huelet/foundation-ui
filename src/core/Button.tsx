@@ -3,12 +3,12 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/react";
-import type { Interpolation } from "@emotion/react";
+import type { SerializedStyles } from "@emotion/react";
 
 export interface ButtonProps {
     children?: React.ReactNode;
     text?: string;
-    css?: Interpolation<any>;
+    css?: SerializedStyles;
     chonky?: boolean;
     type?: "primary" | "secondary" | "gay" | "transparent";
 }

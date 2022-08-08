@@ -3,7 +3,7 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/react";
-import type { Interpolation } from "@emotion/react";
+import type { SerializedStyles } from "@emotion/react";
 
 export interface FieldProps {
     name: string;
@@ -15,7 +15,7 @@ export interface FieldProps {
     prefill?: string;
     padding?: number;
     icon?: React.ReactNode;
-    css?: Interpolation<any>;
+    css?: SerializedStyles;
 }
 
 export const Field = ({
