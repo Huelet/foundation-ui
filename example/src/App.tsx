@@ -8,6 +8,7 @@ const App = () => {
         <Card full={true}>
             <Button
                 type="secondary"
+                disabled={true}
                 icon={
                     <svg
                         viewBox="0 0 24 24"
