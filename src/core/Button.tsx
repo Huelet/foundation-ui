@@ -10,29 +10,61 @@ export interface ButtonProps {
     text?: string;
     css?: SerializedStyles;
     chonky?: boolean;
-    type?: "primary" | "secondary" | "gay" | "transparent";
+    icon?: React.ReactChild;
+    type?: "primary" | "secondary";
+    width?: number;
+    full?: boolean;
 }
 
-export const Button = ({ children, text }: ButtonProps) => {
+export const Button = ({
+    children,
+    text,
+    chonky,
+    icon,
+    type,
+    width,
+    full,
+}: ButtonProps) => {
     return (
         <div
             css={css`
                 display: flex;
-                justify-content: center;
+                justify-content: space-evenly;
                 align-items: center;
-                background-color: #7600ff;
-                border-radius: 12px;
+                flex-direction: row;
+                background: ${type === "primary" ? "#7600ff" : "transparent"};
+                border-radius: ${type === "primary" ? "12px" : "5px"};
+                border: ${type === "primary" ? "none" : "1px solid #7600ff"};
                 color: #eee;
                 cursor: pointer;
                 font-size: 18px;
                 height: 50px;
-                margin-top: 38px;
+                margin-top: ${chonky ? "0" : "10px"};
+                padding-left: ${width ? undefined : "1.5em"};
+                padding-right: ${width ? undefined : "1.5em"};
                 outline: 0;
-                text-align: center;
-                width: 100%;
+                width: ${width ? `${width}em` : full ? "100%" : "auto"};
+
+                &:hover {
+                    background: ${type === "primary"
+                        ? "#6300D6"
+                        : "rgba(0, 0, 0, 0.1)"};
+                }
             `}
         >
-            {text ? <p>{text}</p> : children}
+            {icon}
+            {text ? (
+                <p
+                    css={css`
+                        font-size: 1.2em;
+                        font-weight: 700;
+                    `}
+                >
+                    {text}
+                </p>
+            ) : (
+                children
+            )}
         </div>
     );
 };
