@@ -7,7 +7,7 @@ import type { SerializedStyles } from "@emotion/react";
 
 export interface ButtonProps {
     link?: string | any;
-    onPress?: (event: MouseEvent) => any;
+    onPress?: (event: any) => any;
     children?: React.ReactNode;
     disabled?: boolean;
     text?: string;
@@ -67,7 +67,7 @@ export const Button = ({
                 e.preventDefault(); // don't fire the card's click event listener(s).
                 disabled ? null : onPress!(e);
 
-                location.assign(link || null);
+                link ? location.assign(link) : null;
             }}
         >
             {icon}
