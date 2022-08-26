@@ -3,5 +3,6 @@ import { Pill } from "./Pill";
 import { Button } from "./Button";
 import { Card } from "./Card";
 import { Field } from "./Input";
+import { Toast } from "./Toast";
 
-export { Link, Pill, Button, Card, Field };
+export { Link, Pill, Button, Card, Field, Toast };
